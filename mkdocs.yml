@@ -1,0 +1,122 @@
+site_name: squirrel
+site_description: Database-aware backup for PostgreSQL and MySQL/MariaDB — content-addressed, encrypted, deduplicated.
+site_author: ElPol4k0
+repo_url: https://github.com/elpol4k0/squirrel
+repo_name: elpol4k0/squirrel
+edit_uri: edit/develop/docs/
+
+theme:
+  name: material
+  logo: squirrel_logo.png
+  favicon: squirrel_logo.png
+  palette:
+    - scheme: slate
+      primary: black
+      accent: amber
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - navigation.prune
+    - navigation.path
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - toc.follow
+    - header.autohide
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Quickstart: quickstart.md
+  - Commands:
+    - Overview: commands/index.md
+    - init: commands/init.md
+    - backup: commands/backup.md
+    - backup postgres: commands/backup-postgres.md
+    - backup mysql: commands/backup-mysql.md
+    - restore: commands/restore.md
+    - restore postgres: commands/restore-postgres.md
+    - restore mysql: commands/restore-mysql.md
+    - snapshots: commands/snapshots.md
+    - forget: commands/forget.md
+    - prune: commands/prune.md
+    - check: commands/check.md
+    - diff: commands/diff.md
+    - stats: commands/stats.md
+    - mount: commands/mount.md
+    - key: commands/key.md
+    - secrets: commands/secrets.md
+    - config: commands/config.md
+    - run: commands/run.md
+    - schedule: commands/schedule.md
+    - daemon: commands/daemon.md
+    - pg: commands/pg.md
+    - self-update: commands/self-update.md
+    - completion: commands/completion.md
+  - Configuration:
+    - Overview: configuration/index.md
+    - Repositories: configuration/repositories.md
+    - Secret Providers: configuration/secret-providers.md
+    - Profiles: configuration/profiles.md
+    - Retention: configuration/retention.md
+    - Hooks: configuration/hooks.md
+    - Defaults: configuration/defaults.md
+  - Storage Backends:
+    - Overview: backends/index.md
+    - Local Filesystem: backends/local.md
+    - S3 / MinIO: backends/s3.md
+    - Google Cloud Storage: backends/gcs.md
+    - Azure Blob Storage: backends/azure.md
+    - SFTP: backends/sftp.md
+  - Databases:
+    - PostgreSQL: databases/postgres.md
+    - MySQL / MariaDB: databases/mysql.md
+  - Architecture:
+    - Overview: architecture/index.md
+    - Encryption: architecture/encryption.md
+    - Deduplication: architecture/deduplication.md
+  - Operations:
+    - Monitoring: operations/monitoring.md
+    - Scheduling: operations/scheduling.md
